@@ -23,17 +23,17 @@ async def add_user(user: User):
     cursor = conn.cursor()
     try:
         query = """
-        INSERT INTO usuari (Nombre, Apellido, correoelectronico, Descripcion, Curso, Año, Direccio, CodigoPostal, Password)
+        INSERT INTO usuari (nombre, apellido, correoelectronico, descripcion, curso, año, direccion, codigopostal, userpassword)
         VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
         cursor.execute(query, (
             user.nombre,
             user.apellido,
-            user.correoElectronico,
+            user.correoelectronico,
             user.descripcion,
             user.curso,
             user.año,
-            user.direccio,
+            user.direccion,
             user.codigopostal,
             user.userpassword
         ))
